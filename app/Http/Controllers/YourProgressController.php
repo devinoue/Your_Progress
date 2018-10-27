@@ -8,7 +8,8 @@ class YourProgressController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $a = ['hello'=>"hello"];
+        return $a;
     }
     public function create()
     {
@@ -22,7 +23,7 @@ class YourProgressController extends Controller
     {
         //
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_name)
     {
 
     }

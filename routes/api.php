@@ -14,5 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => ['api']], function(){
-    Route::resource('/', 'YourProgressController');
+    Route::post('/', 'YourProgressController@index');
+    Route::post('/store', 'YourProgressController@store');
+    Route::post('/update/{id_name}', 'YourProgressController@update');
+
 });

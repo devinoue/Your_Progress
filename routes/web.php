@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'YourProgressController@index');
+Route::get('/', function (){return ("OK");});
 
 
 
