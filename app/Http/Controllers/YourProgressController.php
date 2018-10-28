@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Todos;
 
 class YourProgressController extends Controller
 {
     public function index()
     {
-        $a = ['hello'=>"hello"];
-        return $a;
+        $todos = Todos::all();
+        return $todos;
     }
     public function create()
     {
@@ -17,7 +18,7 @@ class YourProgressController extends Controller
     }
     public function store(Request $request)
     {
-
+        return ["store"=>"is here"];
     }
     public function show()
     {
@@ -25,11 +26,14 @@ class YourProgressController extends Controller
     }
     public function update(Request $request, $id_name)
     {
-
+        $todo = Todos::find($id_name);
+        $todo->progress = $request->p_rate;
+        $todo->save();
+        return ['message' => 'update is completed'];
     }
-    public function destroy()
+    public function destroy(Request $request, $id_name)
     {
-
+        return ['update' => $id_name];
     }
     public function edit()
     {

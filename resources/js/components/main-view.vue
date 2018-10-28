@@ -72,7 +72,7 @@ export default {
   created: function() {
     //ajax処理
     axios
-      .get("./ajax.php")
+      .get("http://localhost/_your_progress/public/api")
       .then(r => {
         this.tasks = r.data;
         this.totalProgressRate();
@@ -112,14 +112,14 @@ export default {
         .textContent;
 
       const sendData = {
-        job: "changeTodo",
+        _method: "PATCH",
         p_id: p_id,
         t_id: t_id,
         p_rate: p_rate
       };
 
       const self = this;
-      this.ajaxPlatform(sendData)
+      this.ajaxPlatform(sendData,t_id)
         .then(function(res) {
           //e.target.parentNode.parentNode.parentNode.querySelector(".mes").textContent = "進捗率を変更しました";
           M.toast({ html: "進捗率を変更しました" });
@@ -202,12 +202,12 @@ export default {
       this.tasks.splice(index, 1);
 
       const sendData = {
-        job: "deleteTodo",
+        _method: "delete",
         p_id: p_id,
         del_id: del_id
       };
 
-      this.ajaxPlatform(sendData)
+      this.ajaxPlatform(sendData,'')
         .then(function(res) {
           console.log("送信したテキスト: " + res);
           M.toast({ html: "TODOを削除しました" });
@@ -251,7 +251,7 @@ export default {
           sel.parentNode.classList.add("shine");
       }
     },
-    ajaxPlatform(sendData) {
+    ajaxPlatform(sendData,query) {
       return new Promise(function(resolve, reject) {
         let params = new URLSearchParams();
         if (typeof sendData == "object") {
@@ -260,7 +260,7 @@ export default {
           }
         }
         axios
-          .post("./ajax.php", params)
+          .post("http://localhost/_your_progress/public/api/" + query, params)
           .then(response => {
             resolve(response);
           })
