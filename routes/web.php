@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function (){return view('index');});
-// Route::get('artisan/{cmd}', 'ArtisanController');
 
 
 
