@@ -13,4 +13,4 @@ yarn-error.log
 .env
 .phpunit.result.cache
 mix-manifest.json
-
+/app/Http/Controllers/ArtisanController.php
