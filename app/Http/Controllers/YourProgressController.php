@@ -12,10 +12,7 @@ class YourProgressController extends Controller
         $todos = Todos::all();
         return $todos;
     }
-    public function create()
-    {
 
-    }
     public function store(Request $request)
     {
         $timestamp = time();
@@ -28,10 +25,7 @@ class YourProgressController extends Controller
         $todo->save();
         return ['timestamp' => $timestamp];
     }
-    public function show()
-    {
-        //
-    }
+
     public function update(Request $request, $id_name)
     {
         $todo = Todos::find($id_name);
@@ -44,8 +38,5 @@ class YourProgressController extends Controller
         Todos::destroy($id_name);
         
     }
-    public function edit()
-    {
-        //
-    }
+
 }
