@@ -32,9 +32,9 @@
 			<div class="row">
 				<div class="col m3"></div>
 				<div class="input-field col m6 s12">
-<div class="btn" @click="changeView(1)">終了済み</div>
-<div class="btn" @click="changeView(0)">未達成</div>
-<div class="btn" @click="toCompleted()">100%のタスクを完了済みにする</div>
+          <div class="btn" @click="changeView(1)">終了済み</div>
+          <div class="btn" @click="changeView(0)">未達成</div>
+          <div class="btn" @click="toCompleted()">100%のタスクを完了済みにする</div>
 				</div>
 				<!--end input-field -->
 				<div class="col m3"></div>
