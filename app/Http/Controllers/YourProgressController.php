@@ -15,6 +15,7 @@ class YourProgressController extends Controller
 
     public function store(Request $request)
     {
+        // タイムスタンプをID代わりに。
         $timestamp = time();
         $todo = new Todos;
         $todo->p_id = $request->p_id;
