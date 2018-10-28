@@ -206,7 +206,7 @@ export default {
         del_id: del_id
       };
 
-      this.ajaxPlatform(sendData,'')
+      this.ajaxPlatform(sendData,del_id)
         .then(function(res) {
           console.log("送信したテキスト: " + res);
           M.toast({ html: "TODOを削除しました" });

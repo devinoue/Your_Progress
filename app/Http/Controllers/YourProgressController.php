@@ -41,7 +41,8 @@ class YourProgressController extends Controller
     }
     public function destroy(Request $request, $id_name)
     {
-        return ['update' => $id_name];
+        Todos::destroy($id_name);
+        
     }
     public function edit()
     {
