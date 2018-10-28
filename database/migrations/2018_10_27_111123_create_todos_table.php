@@ -18,7 +18,7 @@ class CreateTodosTable extends Migration
             $table->string('id_name')->primary();
             $table->string('task_name');
             $table->integer('progress')->unsigned();
-            $table->integer('state');
+            $table->integer('state'); 
             $table->timestamps();
         });
     }
