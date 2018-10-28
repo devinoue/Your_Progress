@@ -32,9 +32,9 @@
 			<div class="row">
 				<div class="col m3"></div>
 				<div class="input-field col m6 s12">
-          <div class="btn" @click="changeView(1)">終了済み</div>
-          <div class="btn" @click="changeView(0)">未達成</div>
-          <div class="btn" @click="toCompleted()">100%のタスクを完了済みにする</div>
+          <div class="waves-effect waves-teal btn-flat" @click="changeView(1)">終了済み</div>
+          <div class="waves-effect waves-teal btn-flat" @click="changeView(0)">未達成</div>
+          <div class="waves-effect waves-teal btn-flat" @click="toCompleted()">100%のタスクを完了済みにする</div>
 				</div>
 				<!--end input-field -->
 				<div class="col m3"></div>
@@ -84,9 +84,9 @@ export default {
     flg: false
   }),
   created: function() {
-    //ajax処理
+    //ajax処理(https://my-portfolio.site/yp/public/api)
     axios
-      .get("http://localhost/_your_progress/public/api")
+      .get("api")
       .then(r => {
         this.tasks = r.data;
         this.totalProgressRate();
@@ -274,7 +274,7 @@ export default {
         }
         if (query != "") query = "/" + query;
         axios
-          .post("http://localhost/_your_progress/public/api" + query, params)
+          .post("api" + query, params)
           .then(response => {
             resolve(response);
           })
