@@ -18,7 +18,15 @@ class YourProgressController extends Controller
     }
     public function store(Request $request)
     {
-        return ["store"=>"is here"];
+        $timestamp = time();
+        $todo = new Todos;
+        $todo->p_id = $request->p_id;
+        $todo->id_name = $timestamp;
+        $todo->task_name = $request->todo_line;
+        $todo->progress = 0;
+        $todo->state=0;
+        $todo->save();
+        return ['timestamp' => $timestamp];
     }
     public function show()
     {

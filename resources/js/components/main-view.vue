@@ -168,13 +168,12 @@ export default {
       todo_line_el.value = "";
 
       const sendData = {
-        job: "entryTodo",
         p_id: p_id,
         todo_line: todo_line
       };
       const self = this;
 
-      this.ajaxPlatform(sendData)
+      this.ajaxPlatform(sendData,"")
         .then(function(res) {
           self.tasks.unshift({
             id_name: res.data.timestamp,
@@ -259,8 +258,9 @@ export default {
             params.append(key, sendData[key]);
           }
         }
+        if (query != "") query = "/" + query;
         axios
-          .post("http://localhost/_your_progress/public/api/" + query, params)
+          .post("http://localhost/_your_progress/public/api" + query, params)
           .then(response => {
             resolve(response);
           })

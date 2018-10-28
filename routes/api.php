@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['api']], function(){
     Route::get('/', 'YourProgressController@index');//表示
-    Route::post('/store', 'YourProgressController@store');//新規登録
+    Route::post('/', 'YourProgressController@store');//新規登録
     Route::patch('/{id_name}', 'YourProgressController@update');//更新
     Route::delete('/{id_name}', 'YourProgressController@destroy');//削除
 
