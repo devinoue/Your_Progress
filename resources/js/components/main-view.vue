@@ -84,7 +84,7 @@ export default {
     flg: false
   }),
   created: function() {
-    //ajax処理(https://my-portfolio.site/yp/public/api)
+    //ajax処理
     axios
       .get("api")
       .then(r => {
