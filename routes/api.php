@@ -18,5 +18,4 @@ Route::group(['middleware' => ['api']], function(){
     Route::post('/', 'YourProgressController@store');//新規登録
     Route::patch('/{id_name}', 'YourProgressController@update');//更新
     Route::delete('/{id_name}', 'YourProgressController@destroy');//削除
-
 });
