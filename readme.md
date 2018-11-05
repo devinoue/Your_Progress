@@ -1,5 +1,6 @@
 ## Your Progress|あなたの進捗率
 進捗バー式で管理するTODOリストです。
+Laravel / Vue.jsで構成してます
 現在開発中。
 
 [デモ版はこちら](https://my-portfolio.site/yp/public/)
